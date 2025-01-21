@@ -1,11 +1,19 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import Image from "next/image";
 import React from "react";
 
 const ProjectCard = ({ title, description, image, link } : any) => {
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
-      <img className="w-full h-48 object-cover" src={image} alt={title} />
+      <Image
+        className="w-full h-48 object-cover"
+        src={image}
+        alt={title}
+        width={400} 
+        height={300}
+        priority 
+      />
       <div className="p-4">
         <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
         <p className="text-gray-600 mt-2">{description}</p>

@@ -1,11 +1,19 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import React from "react";
+import Image from "next/image";
 
-const BlogCard = ({ title, description, image, date, link } : any) => {
+const BlogCard = ({ title, description, image, date, link }: any) => {
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
-      <img className="w-full h-48 object-cover" src={image} alt={title} />
+      <Image
+        className="w-full h-48 object-cover"
+        src={image}
+        alt={title}
+        width={400} 
+        height={300}
+        priority 
+      />
       <div className="p-4">
         <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
         <p className="text-gray-500 text-sm">{date}</p>
@@ -52,23 +60,23 @@ const Blog = () => {
     <>
       <Header />
       <section className="py-12" id="blog">
-      <div className="container mx-auto px-6 lg:px-20">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          Blog
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
-            <BlogCard
-              key={index}
-              title={post.title}
-              description={post.description}
-              image={post.image}
-              date={post.date}
-              link={post.link}
-            />
-          ))}
+        <div className="container mx-auto px-6 lg:px-20">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            Blog
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post, index) => (
+              <BlogCard
+                key={index}
+                title={post.title}
+                description={post.description}
+                image={post.image}
+                date={post.date}
+                link={post.link}
+              />
+            ))}
+          </div>
         </div>
-      </div>
       </section>
       <Footer />
     </>
