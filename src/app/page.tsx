@@ -1,101 +1,204 @@
+"use client";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { IntroGuide } from "@/components/IntroGuide";
 import Image from "next/image";
+import React, { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [donationAmount, setDonationAmount] = useState<number>(0);
+  const [donorName, setDonorName] = useState<string>("");
+  const [donorEmail, setDonorEmail] = useState<string>("");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  const suggestedAmounts = [50, 100, 200];
+
+  const handleDonationChange = (amount: number) => {
+    setDonationAmount(amount);
+  };
+
+  const handleDonate = () => {
+    alert(`Obrigado por sua doação de KZ ${donationAmount}!`);
+  };
+
+  return (
+    <div className="app_main">
+      <Header />
+      <main className="flex flex-col justify-center items-center pt-20 pb-10">
+        <IntroGuide />
+
+        <section className="py-20 px-6">
+          <div className="container mx-auto flex flex-col md:flex-row sm:flex-row items-center">
+            {/* Coluna com a imagem grande (esquerda) */}
+            <div className="md:w-2/3 relative">
+              <Image
+                src="/fotogrupo.jpg"
+                alt="Imagem Grande"
+                width={900}
+                height={600}
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
+              />
+            </div>
+
+            {/* Colagem (direita) */}
+            <div className="md:w-1/3 relative">
+              {/* Imagem principal sobreposta */}
+              <div className="absolute top-[50px] left-5 w-32 h-32 z-30 transform ">
+                <Image
+                  src="/imagem1.jpg"
+                  alt="Imagem 1"
+                  width={224}
+                  height={224}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+
+              {/* Imagem inclinada à direita */}
+              <div className="absolute top-[-250px] left-44 right-30 w-40 h-40 z-20 transform ">
+                <Image
+                  src="/imagem2.jpg"
+                  alt="Imagem 2"
+                  width={224}
+                  height={224}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+
+              {/* Imagem menor centralizada */}
+              <div className="absolute top-[-150px] left-10 w-28 h-28 z-40 transform ">
+                <Image
+                  src="/imagem3.jpg"
+                  alt="Imagem 3"
+                  width={112}
+                  height={112}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+
+              {/* Imagem lateral sobreposta */}
+              <div className="absolute top-[-10px] left-60 right-30 w-36 h-36 z-10 transform ">
+                <Image
+                  src="/imagem4.jpg"
+                  alt="Imagem 4"
+                  width={144}
+                  height={144}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+
+              {/* Imagem pequena no fundo */}
+              <div className="absolute top-[-30px] left-[-50] w-20 h-20 z-0 transform">
+                <Image
+                  src="/imagem5.jpg"
+                  alt="Imagem 5"
+                  width={80}
+                  height={80}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+
+              {/* Nova imagem adicional 1 */}
+              <div className="absolute top-[-90px] left-48 w-24 h-24 z-50 transform">
+                <Image
+                  src="/imagem6.jpg"
+                  alt="Imagem 6"
+                  width={96}
+                  height={96}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+
+              {/* Nova imagem adicional 2 */}
+              <div className="absolute top-[-120px] left-36 w-28 h-28 z-45 transform ">
+                <Image
+                  src="/imagem7.jpg"
+                  alt="Imagem 7"
+                  width={112}
+                  height={112}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+
+              {/* Nova imagem adicional 3 */}
+              <div className="absolute top-[-60px] left-60 w-32 h-32 z-35 transform">
+                <Image
+                  src="/imagem7.jpg"
+                  alt="Imagem 8"
+                  width={128}
+                  height={128}
+                  className="object-cover rounded-lg shadow-lg border-2 border-white"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Seção de Doação */}
+        <section className="py-12 px-2 mt-20 ">
+          <div className="container mx-auto flex flex-col md:flex-row items-center">
+            <div >
+              <h2 className="text-3xl text-black text-center mb-6 mt-10">Contribua para nossos projetos</h2>
+              <p className="text-lg text-center mb-8 text-black sm:w-[60%]">
+                Sua doação nos ajuda a continuar promovendo educação, cultura e
+                cidadania. Faça a diferença na vida de muitas pessoas!
+              </p>
+              <Image
+                  src="/imagem6.jpg"
+                  alt="Imagem7"
+                  width={328}
+                  height={228}
+                   className="sm:w-[40%] w-[80%] h-auto object-cover rounded-lg shadow-lg"
+              />
+            </div>
+            
+            <div className="flex flex-col items-center space-y-4 border p-6 rounded-[20] mt-6 ">
+              <input
+                type="text"
+                value={donorName}
+                onChange={(e) => setDonorName(e.target.value)}
+                className="p-4 w-full max-w-xs rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
+                placeholder="Seu nome"
+              />
+              <input
+                type="email"
+                value={donorEmail}
+                onChange={(e) => setDonorEmail(e.target.value)}
+                className="p-4 w-full max-w-xs rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
+                placeholder="Seu e-mail"
+              />
+              <input
+                key={donationAmount}
+                type="number"
+
+                onChange={() => handleDonationChange(donationAmount)}
+                className="p-4 w-full max-w-xs rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
+                placeholder="Valor"
+              />
+              <div className="flex space-x-4">
+                {suggestedAmounts.map((amount) => (
+                  <button
+                    key={amount}
+                    onClick={() => handleDonationChange(amount)}
+                    className={`px-6 py-3 rounded-lg shadow-md text-lg ${
+                      donationAmount === amount
+                        ? "bg-[#E68A00] text-white"
+                        : "bg-gray-200 text-black"
+                    } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFB300]`}
+                  >
+                    KZ {amount}
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={handleDonate}
+                className="mt-4 px-6 py-3 bg-[#FFB300] text-white rounded-lg shadow-md hover:bg-[#E68A00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFB300]"
+              >
+                Doar KZ {donationAmount || "0"}
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
