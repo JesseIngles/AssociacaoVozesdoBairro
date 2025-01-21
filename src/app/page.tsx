@@ -110,7 +110,7 @@ export default function Home() {
               {/* Nova imagem adicional 2 */}
               <div className="absolute top-[-120px] left-36 w-28 h-28 z-45 transform ">
                 <Image
-                  src="/imagem7.jpg"
+                  src="/imagem6.jpg"
                   alt="Imagem 7"
                   width={112}
                   height={112}
@@ -121,7 +121,7 @@ export default function Home() {
               {/* Nova imagem adicional 3 */}
               <div className="absolute top-[-60px] left-60 w-32 h-32 z-35 transform">
                 <Image
-                  src="/imagem7.jpg"
+                  src="/imagem6.jpg"
                   alt="Imagem 8"
                   width={128}
                   height={128}

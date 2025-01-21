@@ -36,21 +36,21 @@ const Projects = () => {
       title: "Plataforma de Streaming",
       description:
         "Uma solução robusta e de alto desempenho para streaming de vídeos e gerenciamento de assinaturas.",
-      image: "https://via.placeholder.com/400x300",
+      image: "/imagem5.jpg",
       link: "#",
     },
     {
       title: "Aplicativo de Serviços Empresariais",
       description:
         "Aplicativo desenvolvido com integração à plataforma MEC, oferecendo soluções empresariais rápidas e eficientes.",
-      image: "https://via.placeholder.com/400x300",
+      image: "/imagem5.jpg",
       link: "#",
     },
     {
       title: "Zima - Plataforma Comunitária",
       description:
         "Uma plataforma inovadora baseada no algoritmo do UTorrent para promover criadores de conteúdo angolanos.",
-      image: "https://via.placeholder.com/400x300",
+      image: "/imagem5.jpg",
       link: "#",
     },
   ];
