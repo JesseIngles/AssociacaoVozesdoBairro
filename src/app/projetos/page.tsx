@@ -3,16 +3,23 @@ import { Header } from "@/components/Header";
 import Image from "next/image";
 import React from "react";
 
-const ProjectCard = ({ title, description, image, link } : any) => {
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, link }) => {
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
       <Image
         className="w-full h-48 object-cover"
         src={image}
         alt={title}
-        width={400} 
+        width={400}
         height={300}
-        priority 
+        priority
       />
       <div className="p-4">
         <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
@@ -30,8 +37,8 @@ const ProjectCard = ({ title, description, image, link } : any) => {
   );
 };
 
-const Projects = () => {
-  const projects = [
+const Projects: React.FC = () => {
+  const projects: ProjectCardProps[] = [
     {
       title: "Plataforma de Streaming",
       description:
@@ -57,8 +64,8 @@ const Projects = () => {
 
   return (
     <>
-      <Header />  
-      <section className="py-12 " id="projects">
+      <Header />
+      <section className="py-12" id="projects">
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
             Nossos Projetos
@@ -78,7 +85,6 @@ const Projects = () => {
       </section>
       <Footer />
     </>
-    
   );
 };
 
