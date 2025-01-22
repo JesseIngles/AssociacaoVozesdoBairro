@@ -27,7 +27,7 @@ export default function Home() {
         <IntroGuide />
 
         <section className="py-20 px-6">
-          <div className="container mx-auto flex flex-col md:flex-row sm:flex-row items-center">
+          <div className=" mx-auto flex flex-col md:flex-row sm:flex-row items-center">
             {/* Coluna com a imagem grande (esquerda) */}
             <div className="md:w-2/3 relative">
               <Image
@@ -121,7 +121,7 @@ export default function Home() {
               {/* Nova imagem adicional 3 */}
               <div className="absolute top-[-60px] left-60 w-32 h-32 z-35 transform">
                 <Image
-                  src="/imagem6.jpg"
+                  src="/imagem5.jpg"
                   alt="Imagem 8"
                   width={128}
                   height={128}
@@ -133,22 +133,25 @@ export default function Home() {
         </section>
 
         {/* Seção de Doação */}
-        <section className="py-12 px-2 mt-20 ">
+        <section className="py-12 px-2 mt-10 ">
           <div className="container mx-auto flex flex-col md:flex-row items-center">
-            <div >
-              <h2 className="text-3xl text-black text-center mb-6 mt-10">Contribua para nossos projetos</h2>
-              <p className="text-lg text-center mb-8 text-black sm:w-[60%]">
-                Sua doação nos ajuda a continuar promovendo educação, cultura e
-                cidadania. Faça a diferença na vida de muitas pessoas!
-              </p>
-              <Image
-                  src="/imagem6.jpg"
-                  alt="Imagem7"
-                  width={328}
-                  height={228}
-                   className="sm:w-[40%] w-[80%] h-auto object-cover rounded-lg shadow-lg"
-              />
-            </div>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-3xl text-black text-center mb-6 mt-10">
+              Contribua para nossos projetos
+            </h2>
+            <p className="text-lg text-center mb-8 text-black sm:w-[60%]">
+              Sua doação nos ajuda a continuar promovendo educação, cultura e
+              cidadania. Faça a diferença na vida de muitas pessoas!
+            </p>
+            <Image
+              src="/imagem6.jpg"
+              alt="Imagem7"
+              width={328}
+              height={228}
+              className="sm:w-[40%] w-[80%] h-auto object-cover rounded-lg shadow-lg"
+            />
+          </div>
+
             
             <div className="flex flex-col items-center space-y-4 border p-6 rounded-[20] mt-6 ">
               <input
