@@ -21,7 +21,7 @@ export default function Contacto() {
                   type="text"
                   id="name"
                   placeholder="Seu nome"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>
               <div className="mb-4">
@@ -32,7 +32,7 @@ export default function Contacto() {
                   type="email"
                   id="email"
                   placeholder="Seu email"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>
               <div className="mb-4">
@@ -43,7 +43,7 @@ export default function Contacto() {
                   id="message"
                   placeholder="Escreva sua mensagem aqui..."
                   
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full px-4 py-2 text-black border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 ></textarea>
               </div>
               <button

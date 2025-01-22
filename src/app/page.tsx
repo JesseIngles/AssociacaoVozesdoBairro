@@ -158,24 +158,24 @@ export default function Home() {
                 type="text"
                 value={donorName}
                 onChange={(e) => setDonorName(e.target.value)}
-                className="p-4 w-full max-w-xs rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
+                className="p-4 w-full max-w-xs rounded-lg text-black text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
                 placeholder="Seu nome"
               />
               <input
                 type="email"
                 value={donorEmail}
                 onChange={(e) => setDonorEmail(e.target.value)}
-                className="p-4 w-full max-w-xs rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
+                className="p-4 w-full max-w-xs text-black rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
                 placeholder="Seu e-mail"
               />
               <input
-                key={donationAmount}
                 type="number"
-
-                onChange={() => handleDonationChange(donationAmount)}
-                className="p-4 w-full max-w-xs rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
+                value={donationAmount} 
+                onChange={(e) => handleDonationChange(Number.parseInt(e.target.value))}
+                className="p-4 w-full max-w-xs rounded-lg text-lg border text-black border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
                 placeholder="Valor"
               />
+
               <div className="flex space-x-4">
                 {suggestedAmounts.map((amount) => (
                   <button
