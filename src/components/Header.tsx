@@ -38,6 +38,7 @@ export function Header() {
 
         {/* Menu de Navegação Desktop */}
         <nav className={`hidden md:flex gap-8`}>
+          <Link href="/" className="text-[#654321] hover:underline decoration-2 text-[#6A4E23]">Inicio</Link>
           <Link href="/quemsomos" className="text-[#654321] hover:underline decoration-2 text-[#6A4E23]">Quem Somos</Link>
           <Link href="/projetos" className="text-[#654321] hover:underline decoration-2 text-[#6A4E23]">Projetos</Link>
           <Link href="/blog" className="text-[#654321] hover:underline decoration-2 text-[#6A4E23]">Blog</Link>
@@ -53,6 +54,7 @@ export function Header() {
       {/* Menu de Navegação Mobile */}
       {menuOpen && (
         <div className="md:hidden bg-[#111D25] p-4">
+          <Link href="/" className="text-[#654321] hover:underline decoration-2 text-[#6A4E23]">Inicio</Link>
           <Link href="/quemsomos" className="block text-white hover:text-blue-400 py-2">Quem Somos</Link>
           <Link href="/projetos" className="block text-white hover:text-blue-400 py-2">Projetos</Link>
           <Link href="/blog" className="block text-white hover:text-blue-400 py-2">Blog</Link>

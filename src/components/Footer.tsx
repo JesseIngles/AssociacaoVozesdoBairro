@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="top-0 left-0 right-0 z-20 bg-[#6A4E23]">
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center px-4">
+      <div className="container mx-auto flex flex-col sm:flex-row justify-center items-center px-4">
         {/* Logo */}
         <div>
           <Link href="/">
@@ -16,15 +16,16 @@ export function Footer() {
           </Link>
         </div>
 
-        <div>
+        {
+        /* {<div>
           <ul>
             <li>
               <strong>Kilamba Kiaxi</strong>
             </li>
             <li>EDIF. J17 APT. 54</li>
           </ul>
-        </div>
-
+        </div> */
+        }
         <div className="container mx-auto text-center text-white">
           <p className="mb-4">Siga-nos nas redes sociais</p>
           <div className="flex justify-center space-x-6">

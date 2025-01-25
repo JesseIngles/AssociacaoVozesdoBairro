@@ -166,7 +166,7 @@ export default function Home() {
                 value={donorEmail}
                 onChange={(e) => setDonorEmail(e.target.value)}
                 className="p-4 w-full max-w-xs text-black rounded-lg text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFB300]"
-                placeholder="Seu e-mail"
+                placeholder="Seu e-mail "
               />
               <input
                 type="number"
